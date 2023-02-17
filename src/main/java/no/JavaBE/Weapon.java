@@ -1,14 +1,26 @@
 package no.JavaBE;
 
-public class Weapon {
-    private String weaponType;
+
+
+public class Weapon extends Item{
+
     private int WeaponDamage;
+    public Weapon(){}
 
-    public Weapon(String weaponType, int weaponDamage) {
-        super();
+    Item.Slot slot;
+    WeaponType weaponType;
+    public Weapon(String name, int requiredLevel, String weaponType, int weaponDamage ) {
+     this.slot = Slot.Weapon;
+     this.setName(name);
+     this.setRequiredLevel(requiredLevel);
+     this.WeaponDamage = weaponDamage;
+     this.weaponType = Weapon.WeaponType.valueOf(weaponType);
 
-        this.weaponType = weaponType;
-        this.WeaponDamage = weaponDamage;
+
+    }
+
+    public int getWeaponDamage() {
+        return WeaponDamage;
     }
 
     enum WeaponType{
@@ -21,4 +33,6 @@ public class Weapon {
         Wands
 
     }
+
+
 }

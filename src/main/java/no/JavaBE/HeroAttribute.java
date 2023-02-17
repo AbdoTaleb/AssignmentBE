@@ -5,6 +5,11 @@ public class HeroAttribute {
     private int dexterity;
     private int intelligence;
 
+    public HeroAttribute(int strength, int dexterity, int intelligence){
+        this.strength = strength;
+        this.dexterity =  dexterity;
+        this.intelligence = intelligence;
+    }
     public int getStrength() {
         return strength;
     }
